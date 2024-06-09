@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>add employees</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script>
+            function addTemperatureRows() {
+                var table = document.getElementById("temperatures");
+                var newRow = table.insertRow(table.rows.length);
+                var cell1 = newRow.insertCell(0);
+                var cell2 = newRow.insertCell(1);
+
+                cell1.innerHTML = '<input type="text" name="temp">';
+                cell2.innerHTML = '<button type="button" onClick="addTemperatureRows()">ADD</button>';
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Employee Details</h1>
+
+        <form action="AddEmpServlet.do" method="POST">
+            <table>
+                <tr>
+                    <td>Name:</td>
+                    <td><input type="text" name="name"></td>
+                </tr>
+
+                <tr>
+                    <td>Date:</td>
+                    <td><input type="text" name="date"></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <table id="temperatures">
+                            <tr>
+                                <td>Temperature:</td>
+                                <td><input type="text" name="temp"></td>
+                                <td><button type="button" onClick="addTemperatureRows()">ADD</button></td>
+                            </tr>
+                        </table>
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="ADD"></td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
